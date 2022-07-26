@@ -1,0 +1,37 @@
+##################################################################
+# 服务器
+##################################################################
+server:
+    port: 4080
+    tomcat:
+        uri-encoding: UTF-8
+    compression:
+        enabled: true
+        mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css
+##################################################################
+# Netty配置
+##################################################################
+netty:
+    maxReceiveBytes: 4096
+    serverPort: 4081
+#####################################
+## Spring配置
+#####################################
+spring:
+    #数据源配置
+    datasource:
+        #驱动名称
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        #链接地址
+        url: jdbc:mysql://localhost:3306/the_message?characterEncoding=UTF-8&useSSL=true&serverTimezone=Asia/Shanghai
+        #用户名
+        username: root
+        #密码
+        password: root
+
+#####################################
+## MyBatis配置
+#####################################
+mybatis:
+    # 加载全局的配置文件
+    configLocation: classpath:mybatis/mybatis-config.xml
